@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Jaime Varela";
+}
+
+<link href="@Url.Content("~/css/mystyles.css")" rel="stylesheet" type="text/css" />
+
+<!--
+#profile_pic{
+    
+    width:30%;
+    height:30%;
+    border-radius: 50%;
+    margin-left:15px;
+    float: left;
+    margin-right: 15px;
+    max-width: 350px;
+}
+-->
+<p style="margin-right: 15px;"><img src="@Url.Content("~/images/jaime.jpg")" alt="Profile picture" id="profile_pic">
+
+<div id=my_info>
+<b>Hello, I'm Jaime.</b>
+    <br><br>
+    I am a developer who works in many areas of development but my main interest lie in web development, efficient algorithms, and numerical analysis.<br> <br>
+    
+    
+    My past work involved fluctuational electro-magnetism (Casimir forces). quantum gravity, and dark matter.  Feel free to visit <a href="https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=%22Jaime+Varela%22&terms-0-field=author&classification-physics=y&classification-physics_archives=all&date-filter_by=all_dates&date-year=&date-from_date=2010&date-to_date=2013&size=50&order=-announced_date_first">arxiv</a> if you want to learn more about such work.  To learn about my work with web development you can visit my <a href="https://app.revature.com/profile/jaimev/537af3db6c2d9b95dd80e65908cb37b7">resume</a>.
+    <br><br>
+    
+    Some example programs I have written can be found in <a href="https://github.com/jman27182818">git hub</a>. Alternatively, you can live-run some programs <a asp-action="MyPrograms" asp-controller="Programs">here</a>.
+</div>
+</p>

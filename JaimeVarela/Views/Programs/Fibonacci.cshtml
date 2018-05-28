@@ -1,0 +1,32 @@
+@{
+    if(@ViewData["result"] == null)
+    {
+        ViewData["result"] = "Results shown here.";
+    }
+    if(@ViewData["input"] == null)
+    {
+        ViewData["input"] = "";
+    }
+}
+
+<br><br>
+
+<p>The following form uses ASP.NET's built in big integer library to compute Fibonacci numbers.  Below a certain value (about 100) 
+    the standard loop is used, above this value Fibonacci doubling formulas are used to compute the Fibonacci number.
+</p>
+
+<br><br>
+
+<form accept-charset="0123456789" asp-action="Fibonacci" asp-controller="Programs">
+    <div class="form-group">
+                <label name="integer">Please Enter an Integer</label>
+                <input name="integer" type="text" class="form-control" value=@ViewData["input"]>
+    </div>
+    <div class="form-group">
+                <input type="submit" value="result" class="btn btn-default">
+    </div>
+</form>
+
+<div>
+    <p align="center" style="word-wrap: break-word;">@ViewData["result"]</p>
+</div>
