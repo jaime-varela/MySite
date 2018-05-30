@@ -1,12 +1,26 @@
 using System;
+using MathFunctions;
 
 namespace PhysicsFunctions
 {
     public static class TimeDilation
     {
-        public static decimal TwinParadox(decimal velocity)
+        /// <summary>
+        /// This function will return dialated time given a ship time or a planet (stationary) time
+        /// </summary>
+        /// <input> velocity in percentage of the speed of light ( 0 < v < 1), time (arbitrary units), isShip is a bool which is true if your input is the ship time and false otherwise.</input>
+        /// <returns>the desired time</returns>
+        public static decimal TwinParadox(decimal velocity, decimal time,bool isShip)
         {
-            return 0;
+            if(isShip)
+            {                
+                return time / (Computation.SquareRoot(1-velocity) * Computation.SquareRoot(1+velocity));
+            }
+            else
+            {
+                return time * (Computation.SquareRoot(1-velocity) * Computation.SquareRoot(1+velocity));
+            }
         }
+
     }
 }
