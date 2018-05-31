@@ -15,19 +15,23 @@
 
 <br><br>
 
-<p>The following computes the binomial coefficient 'n choose k'.  In other words the number of ways one can choose k items from n total items.
-</p>
+<p>@ViewData["message"]</p>
 
 <br><br>
 
-<form accept-charset="0123456789" asp-action="BinomialCoeff" asp-controller="Programs">
-    <div class="form-group">
-                <label name="number">Please Enter an Integer for n</label>
-                <input name="number" type="text" class="form-control" value=@ViewData["input1"]>
+<!--
+            ViewData["CallingController"] = CallingController;
+            ViewData["CallingAction"] = CallingAction;
+    -->
+
+<form accept-charset="0123456789" class="form-group" asp-action=@ViewData["CallingAction"] asp-controller=@ViewData["CallingController"]>
+    <div>
+                <label name="number1">@ViewData["param1message"]</label>
+                <input name="number1" type="text" class="form-control" value=@ViewData["input1"]>
     </div>
     <div class="form-group">
-                <label name="knumber">Please Enter an Integer for k</label>
-                <input name="knumber" type="text" class="form-control" value=@ViewData["input2"]>
+                <label name="number2">@ViewData["param2message"]</label>
+                <input name="number2" type="text" class="form-control" value=@ViewData["input2"]>
     </div>
 
     <div class="form-group">

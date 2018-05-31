@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MathFunctions\MathFunctions.csproj" />
+    <ProjectReference Include="..\PhysicsFunctions\PhysicsFunctions.csproj" />
   </ItemGroup>
 
 </Project>
