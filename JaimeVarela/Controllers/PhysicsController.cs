@@ -9,9 +9,10 @@ namespace JaimeVarela.Controllers
     public class PhysicsController : Controller
     {
         [HttpGet]
-        public IActionResult TwinParadox()
+        public IActionResult TwinParadoxStoP()
         {
-            return View();
+            string mymessage= "This function calculates ...";
+            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,});
         }
     }
 }
