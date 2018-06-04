@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -6,9 +5,11 @@ using JaimeVarela.Models;
 using System;
 using MathFunctions;
 using PhysicsFunctions;
+using JaimeVarela.Filters;
 
 namespace JaimeVarela.Controllers
 {
+    [ResponseCache(NoStore = true, Duration = 0)] 
     public class PhysicsController : Controller
     {
         private string _twinParadoxmessage = "Here, we calculate time dilation between a ship traveling at some velocity relative to an oberver.";
@@ -52,5 +53,43 @@ namespace JaimeVarela.Controllers
             return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _StoPtime, CallingAction = "TwinParadoxStoP",CallingController = "Physics",
                     result = myresult, param1 = number1,param2 = number2});            
         }
+
+        [HttpGet]
+        public IActionResult TwinParadoxPtoS()
+        {
+            string mymessage= _twinParadoxmessage;
+            mymessage += _twinParadoxPtoS;
+            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _StoPtime, CallingAction = "TwinParadoxPtoS",CallingController = "Physics"});
+        }
+
+        [HttpPost]
+        public IActionResult TwinParadoxPtoS(string number1,string number2)
+        {
+            string mymessage= _twinParadoxmessage;
+            mymessage += _twinParadoxStoP;
+            string myresult = "";
+            try
+            {
+                var num1 = Decimal.Parse(number1);
+                var num2 = Decimal.Parse(number2);
+                if((num1 > 1 || num1 < 0) || (num2 < 0))
+                {
+                    myresult = "Invalid parameter ranges";
+                }
+                else
+                {
+                    myresult = TimeDilation.TwinParadox(num1,num2,false).ToString();
+                }
+            }
+            catch(Exception e)
+            {
+                myresult = "Inproper input number or it's beyond the range of decimal precision.";
+            }
+            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _PtoStime, CallingAction = "TwinParadoxPtoS",CallingController = "Physics",
+                    result = myresult, param1 = number1,param2 = number2});            
+        }
+
+
+
     }
 }

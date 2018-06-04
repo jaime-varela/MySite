@@ -1,10 +1,12 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using JaimeVarela.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JaimeVarela.Controllers
 {
+    [ResponseCache(NoStore = true, Duration = 0)] 
     public class ResultsController : Controller
     {
         [HttpGet]
@@ -20,7 +22,7 @@ namespace JaimeVarela.Controllers
             ViewData["result"] = result;
             ViewData["CallingController"] = CallingController;
             ViewData["CallingAction"] = CallingAction;
-             return View();
+            return View();
         }
     }
 }

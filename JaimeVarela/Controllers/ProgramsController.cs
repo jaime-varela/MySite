@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using JaimeVarela.Models;
 using MF = MathFunctions;
+using JaimeVarela.Filters;
 
 namespace JaimeVarela.Controllers
 {
     [Route("[controller]/[action]")]
+    [ResponseCache(NoStore = true, Duration = 0)] 
     public class ProgramsController : Controller
     {
         private static long maxint = 10000;
