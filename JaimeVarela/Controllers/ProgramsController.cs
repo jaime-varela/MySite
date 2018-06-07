@@ -11,12 +11,14 @@ using JaimeVarela.Filters;
 namespace JaimeVarela.Controllers
 {
     [Route("[controller]/[action]")]
-    [ResponseCache(NoStore = true, Duration = 0)] 
     public class ProgramsController : Controller
     {
         private static long maxint = 10000;
         private static long maxfib = 100000;
         private static long maxbin = 118450;//found by finding n s.t  10,000! = (n n/2)
+
+        private string _factorialmessage = "The following form uses ASP.NET's built in big integer library to compute factorials.  Below a certain value (about 500) the factorial is calculated via standard recusion, above that value the factorial is calculated via split-recursive algorithm.";
+        private string _enterinteger = "Please Enter an Integer";
         public IActionResult MyPrograms()
         {
             return View();
@@ -25,29 +27,30 @@ namespace JaimeVarela.Controllers
         [HttpGet]
         public IActionResult Factorial()
         {
-            return View();
+            string mymessage= _factorialmessage;
+            return RedirectToAction("OneFunctionResult","Results",new {message = mymessage,param1message = _enterinteger, CallingAction = "Factorial",CallingController = "Programs"});
         }
 
         [HttpPost]
-        public IActionResult Factorial(string integer)
+        public IActionResult Factorial(string number1)
         {
-            string result = "";
+            string mymessage = _factorialmessage;
+            string myresult = "";
             try
             {                
-                var intval = Convert.ToInt64(integer);
+                var intval = Convert.ToInt64(number1);
                 if(intval > maxint)
-                    result = "Input integers are limited to be less than " +maxint.ToString() +
+                    myresult = "Input integers are limited to be less than " +maxint.ToString() +
                             " in order reduce data and processing loads.  Send an e-mail if you are interested in larger integers.";
                 else
-                    result = MF.Factorial.FString(intval);
+                    myresult = MF.Factorial.FString(intval);
             }
             catch(Exception e)
             {
-                result = "Invalid integer or the integer is bigger than LONG_MAX";
+                myresult = "Invalid integer or the integer is bigger than LONG_MAX";
             }
-            ViewData["result"] = result;
-            ViewData["input"] = integer;
-            return View();
+            return RedirectToAction("OneFunctionResult","Results",new {message = mymessage,param1message = _enterinteger, CallingAction = "Factorial",CallingController = "Programs",
+                    result = myresult, param1 = number1});            
         }
 
         [HttpGet]

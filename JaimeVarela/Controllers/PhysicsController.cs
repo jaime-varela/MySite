@@ -9,7 +9,6 @@ using JaimeVarela.Filters;
 
 namespace JaimeVarela.Controllers
 {
-    [ResponseCache(NoStore = true, Duration = 0)] 
     public class PhysicsController : Controller
     {
         private string _twinParadoxmessage = "Here, we calculate time dilation between a ship traveling at some velocity relative to an oberver.";

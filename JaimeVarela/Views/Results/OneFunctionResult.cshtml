@@ -1,0 +1,36 @@
+@{
+    if(@ViewData["result"] == null)
+    {
+        ViewData["result"] = "Results shown here.";
+    }
+    if(@ViewData["input1"] == null)
+    {
+        ViewData["input1"] = "";
+    }
+}
+
+<br><br>
+
+<p>@ViewData["message"]</p>
+
+<br><br>
+
+<!--
+            ViewData["CallingController"] = CallingController;
+            ViewData["CallingAction"] = CallingAction;
+    -->
+
+<form accept-charset="0123456789" class="form-group" asp-action=@ViewData["CallingAction"] asp-controller=@ViewData["CallingController"]>
+    <div>
+                <label name="number1">@ViewData["param1message"]</label>
+                <input name="number1" type="text" class="form-control" value=@ViewData["input1"]>
+    </div>
+    <br>
+    <div class="form-group">
+                <input type="submit" value="result" class="btn btn-default">
+    </div>
+</form>
+
+<div>
+    <p align="center" style="word-wrap: break-word;">@ViewData["result"]</p>
+</div>
