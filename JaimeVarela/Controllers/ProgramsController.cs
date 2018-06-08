@@ -27,30 +27,29 @@ namespace JaimeVarela.Controllers
         [HttpGet]
         public IActionResult Factorial()
         {
-            string mymessage= _factorialmessage;
-            return RedirectToAction("OneFunctionResult","Results",new {message = mymessage,param1message = _enterinteger, CallingAction = "Factorial",CallingController = "Programs"});
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Factorial(string number1)
+        public IActionResult Factorial(string integer)
         {
-            string mymessage = _factorialmessage;
-            string myresult = "";
+            string result = "";
             try
             {                
-                var intval = Convert.ToInt64(number1);
+                var intval = Convert.ToInt64(integer);
                 if(intval > maxint)
-                    myresult = "Input integers are limited to be less than " +maxint.ToString() +
+                    result = "Input integers are limited to be less than " +maxint.ToString() +
                             " in order reduce data and processing loads.  Send an e-mail if you are interested in larger integers.";
                 else
-                    myresult = MF.Factorial.FString(intval);
+                    result = MF.Factorial.FString(intval);
             }
             catch(Exception e)
             {
-                myresult = "Invalid integer or the integer is bigger than LONG_MAX";
+                result = "Invalid integer or the integer is bigger than LONG_MAX";
             }
-            return RedirectToAction("OneFunctionResult","Results",new {message = mymessage,param1message = _enterinteger, CallingAction = "Factorial",CallingController = "Programs",
-                    result = myresult, param1 = number1});            
+            ViewData["result"] = result;
+            ViewData["input"] = integer;
+            return View();
         }
 
         [HttpGet]

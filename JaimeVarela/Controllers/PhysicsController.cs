@@ -23,7 +23,12 @@ namespace JaimeVarela.Controllers
         {
             string mymessage= _twinParadoxmessage;
             mymessage += _twinParadoxStoP;
-            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _StoPtime, CallingAction = "TwinParadoxStoP",CallingController = "Physics"});
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _twinparam1;
+            TempData["CallingAction"] = "TwinParadoxStoP";
+            TempData["CallingController"] = "Physics";
+            TempData["param2message"] = _StoPtime;
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "TwinParadoxStoP"});
         }
 
         [HttpPost]
@@ -49,8 +54,15 @@ namespace JaimeVarela.Controllers
             {
                 myresult = "Inproper input number or it's beyond the range of decimal precision.";
             }
-            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _StoPtime, CallingAction = "TwinParadoxStoP",CallingController = "Physics",
-                    result = myresult, param1 = number1,param2 = number2});            
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _twinparam1;
+            TempData["CallingAction"] = "TwinParadoxStoP";
+            TempData["CallingController"] = "Physics";
+            TempData["param2message"] = _StoPtime;
+            TempData["param1"] = number1;
+            TempData["param2"] = number2;
+            TempData["result"] = myresult;
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "TwinParadoxStoP"});
         }
 
         [HttpGet]
@@ -58,7 +70,12 @@ namespace JaimeVarela.Controllers
         {
             string mymessage= _twinParadoxmessage;
             mymessage += _twinParadoxPtoS;
-            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _StoPtime, CallingAction = "TwinParadoxPtoS",CallingController = "Physics"});
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _twinparam1;
+            TempData["CallingAction"] = "TwinParadoxPtoS";
+            TempData["CallingController"] = "Physics";
+            TempData["param2message"] = _PtoStime;
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "TwinParadoxPtoS"});
         }
 
         [HttpPost]
@@ -84,11 +101,16 @@ namespace JaimeVarela.Controllers
             {
                 myresult = "Inproper input number or it's beyond the range of decimal precision.";
             }
-            return RedirectToAction("TwoFunctionResult","Results",new {message = mymessage,param1message = _twinparam1, param2message = _PtoStime, CallingAction = "TwinParadoxPtoS",CallingController = "Physics",
-                    result = myresult, param1 = number1,param2 = number2});            
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _twinparam1;
+            TempData["CallingAction"] = "TwinParadoxPtoS";
+            TempData["CallingController"] = "Physics";
+            TempData["param2message"] = _PtoStime;
+            TempData["result"] = myresult;
+            TempData["param1"] = number1;
+            TempData["param2"] = number2;
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "TwinParadoxPtoS"});
         }
-
-
 
     }
 }
