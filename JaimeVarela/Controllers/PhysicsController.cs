@@ -111,6 +111,104 @@ namespace JaimeVarela.Controllers
             TempData["param2"] = number2;
             return RedirectToAction("TwoFunctionResult","Results",new {description = "TwinParadoxPtoS"});
         }
+//--------------------- Black holes -------------------------------------------------
+        private string _bhmessage = "Here we calculate the time dilation due to a black hole for stationary observers. ";
+        private string _NtoFmessage = "Here we assume the input time is for the near BH observer.";
+        private string _FtoNmessage = "Here we assume the input time is for the far away observer.";
+        private string _bhparam1 = "Enter the time";
+        private string _bhparam2 = "Enter the distance ratio (schwarchild r coordinate divided by schwarchild radius rs)";
 
+        [HttpGet]
+        public IActionResult BlackHoleNtoF()
+        {
+            string mymessage= _bhmessage;
+            mymessage += _NtoFmessage;
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _bhparam1;
+            TempData["param2message"] = _bhparam2;
+            TempData["CallingAction"] = "BlackHoleNtoF";
+            TempData["CallingController"] = "Physics";
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "BlackHoleNtoF"});
+        }
+        [HttpGet]
+        public IActionResult BlackHoleFtoN()
+        {
+            string mymessage= _bhmessage;
+            mymessage += _FtoNmessage;
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _bhparam1;
+            TempData["param2message"] = _bhparam2;
+            TempData["CallingAction"] = "BlackHoleFtoN";
+            TempData["CallingController"] = "Physics";
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "BlackHoleFtoN"});
+        }
+
+        [HttpPost]
+        public IActionResult BlackHoleNtoF(string number1,string number2)
+        {
+            string mymessage= _bhmessage;
+            mymessage += _NtoFmessage;
+            string myresult = "";
+            try
+            {
+                var num1 = Decimal.Parse(number1);
+                var num2 = Decimal.Parse(number2);
+                if((num2 < 1) || (num1 < 0))
+                {
+                    myresult = "Invalid parameter ranges";
+                }
+                else
+                {
+                    myresult = TimeDilation.BlackHole(num2,num1,true).ToString();
+                }
+            }
+            catch(Exception e)
+            {
+                myresult = "Inproper input number or it's beyond the range of decimal precision.";
+            }            
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _bhparam1;
+            TempData["param2message"] = _bhparam2;
+            TempData["CallingAction"] = "BlackHoleNtoF";
+            TempData["CallingController"] = "Physics";
+            TempData["result"] = myresult;
+            TempData["param1"] = number1;
+            TempData["param2"] = number2;
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "BlackHoleNtoF"});
+        }
+
+        [HttpPost]
+        public IActionResult BlackHoleFtoN(string number1,string number2)
+        {
+            string mymessage= _bhmessage;
+            mymessage += _FtoNmessage;
+            string myresult = "";
+            try
+            {
+                var num1 = Decimal.Parse(number1);
+                var num2 = Decimal.Parse(number2);
+                if((num2 < 1) || (num1 < 0))
+                {
+                    myresult = "Invalid parameter ranges";
+                }
+                else
+                {
+                    myresult = TimeDilation.BlackHole(num2,num1,false).ToString();
+                }
+            }
+            catch(Exception e)
+            {
+                myresult = "Inproper input number or it's beyond the range of decimal precision.";
+            }            
+            TempData["message"] = mymessage;
+            TempData["param1message"] = _bhparam1;
+            TempData["param2message"] = _bhparam2;
+            TempData["CallingAction"] = "BlackHoleFtoN";
+            TempData["CallingController"] = "Physics";
+            TempData["result"] = myresult;
+            TempData["param1"] = number1;
+            TempData["param2"] = number2;
+            return RedirectToAction("TwoFunctionResult","Results",new {description = "BlackHoleFtoN"});
+        }
     }
 }

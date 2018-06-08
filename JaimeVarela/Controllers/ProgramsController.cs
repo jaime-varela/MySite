@@ -17,8 +17,6 @@ namespace JaimeVarela.Controllers
         private static long maxfib = 100000;
         private static long maxbin = 118450;//found by finding n s.t  10,000! = (n n/2)
 
-        private string _factorialmessage = "The following form uses ASP.NET's built in big integer library to compute factorials.  Below a certain value (about 500) the factorial is calculated via standard recusion, above that value the factorial is calculated via split-recursive algorithm.";
-        private string _enterinteger = "Please Enter an Integer";
         public IActionResult MyPrograms()
         {
             return View();

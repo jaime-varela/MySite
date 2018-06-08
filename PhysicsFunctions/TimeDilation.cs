@@ -22,5 +22,18 @@ namespace PhysicsFunctions
             }
         }
 
+        public static decimal BlackHole(decimal distanceRatio, decimal time, bool isNear)
+        {
+            var rsoverr = 1.0m / distanceRatio;
+            if(isNear)
+            {
+                return time / Computation.SquareRoot(1-rsoverr);
+            }
+            else
+            {
+                return time * Computation.SquareRoot(1-rsoverr);
+            }
+        }
+
     }
 }
