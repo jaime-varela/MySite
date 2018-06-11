@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFunctions", "MathFuncti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicsFunctions", "PhysicsFunctions\PhysicsFunctions.csproj", "{856D0D8E-FCFF-4E9D-AFCD-ADDB9BFD11E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{959280FF-B2F8-483E-ADCE-726E48EB4E54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{856D0D8E-FCFF-4E9D-AFCD-ADDB9BFD11E9}.Release|x64.Build.0 = Release|x64
 		{856D0D8E-FCFF-4E9D-AFCD-ADDB9BFD11E9}.Release|x86.ActiveCfg = Release|x86
 		{856D0D8E-FCFF-4E9D-AFCD-ADDB9BFD11E9}.Release|x86.Build.0 = Release|x86
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Debug|x64.ActiveCfg = Debug|x64
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Debug|x64.Build.0 = Debug|x64
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Debug|x86.ActiveCfg = Debug|x86
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Debug|x86.Build.0 = Debug|x86
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Release|x64.ActiveCfg = Release|x64
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Release|x64.Build.0 = Release|x64
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Release|x86.ActiveCfg = Release|x86
+		{959280FF-B2F8-483E-ADCE-726E48EB4E54}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
