@@ -30,5 +30,20 @@ namespace Tests
             //Assert
             Assert.True(result==expected);
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void FibonacciTestLowInts(int value)
+        {
+            //Arrange 
+            var expected = (value == 0)? 0 : 1;
+            //Act
+            var result = Fibonacci.FibonacciVal(value);
+            //Assert
+            Assert.True(result==expected);
+        }
+
     }
 }
