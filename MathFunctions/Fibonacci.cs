@@ -25,7 +25,7 @@ namespace MathFunctions
             }
             return fnp;
         }
-        //returns a pair F_x and F_{x+1}
+        //This will return the pair F_x and F_{x+1}
         private static Pair<BigInteger> FibGet(long x)
         {
             if(x == 0)

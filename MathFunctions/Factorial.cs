@@ -36,7 +36,7 @@ namespace MathFunctions
                 for(long i = x-1;i > 1;i--)
                 {
                     posInteger *= i;
-                }//TODO: binary algorithm.  Clearly this is bad
+                }
                 return posInteger;
             }
             else
@@ -44,7 +44,7 @@ namespace MathFunctions
                 return FRec(1,x);
             }
         }
-        //returns (beg) * (beg+1) ... (end);
+        // This will return (beg) * (beg+1) ... (end)
         public static BigInteger FRec(long beg,long end)
         {
             long l = (beg + end)/2;

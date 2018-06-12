@@ -12,7 +12,7 @@ namespace MathFunctions
             if(n > 2*k)
                 return (Factorial.FRec(n-k+1,n))/(Factorial.FBigInt(k));
             else
-                return (Factorial.FRec(k+1,n))/(Factorial.FBigInt(n-k));;
+                return (Factorial.FRec(k+1,n))/(Factorial.FBigInt(n-k));
         }
 
         public static string BinomialString(long n,long k)

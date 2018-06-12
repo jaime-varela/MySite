@@ -11,12 +11,12 @@ namespace JaimeVarela.Controllers
 {
     public class PhysicsController : Controller
     {
-        private string _twinParadoxmessage = "Here, we calculate time dilation between a ship traveling at some velocity relative to an oberver.";
-        private string _twinParadoxStoP = "This page assumes the input time is the ship time.";
-        private string _twinParadoxPtoS = "This page assumes the input time is the observer time.";
-        private string _twinparam1 = "Enter the velocity (as a fraction of the speed of light)";
-        private string _StoPtime = "Enter ship time (arbitrary units)";
-        private string _PtoStime = "Enter observer time (arbitrary units)";
+        private readonly string _twinParadoxmessage = "Here, we calculate time dilation between a ship traveling at some velocity relative to an oberver.";
+        private readonly string _twinParadoxStoP = "This page assumes the input time is the ship time.";
+        private readonly string _twinParadoxPtoS = "This page assumes the input time is the observer time.";
+        private readonly string _twinparam1 = "Enter the velocity (as a fraction of the speed of light)";
+        private readonly string _StoPtime = "Enter ship time (arbitrary units)";
+        private readonly string _PtoStime = "Enter observer time (arbitrary units)";
 
         [HttpGet]
         public IActionResult TwinParadoxStoP()
@@ -112,11 +112,11 @@ namespace JaimeVarela.Controllers
             return RedirectToAction("TwoFunctionResult","Results",new {description = "TwinParadoxPtoS"});
         }
 //--------------------- Black holes -------------------------------------------------
-        private string _bhmessage = "Here we calculate the time dilation due to a black hole for stationary observers. ";
-        private string _NtoFmessage = "Here we assume the input time is for the near BH observer.";
-        private string _FtoNmessage = "Here we assume the input time is for the far away observer.";
-        private string _bhparam1 = "Enter the time";
-        private string _bhparam2 = "Enter the distance ratio (schwarchild r coordinate divided by schwarchild radius rs)";
+        private readonly string _bhmessage = "Here we calculate the time dilation due to a black hole for stationary observers. ";
+        private readonly string _NtoFmessage = "Here we assume the input time is for the near BH observer.";
+        private readonly string _FtoNmessage = "Here we assume the input time is for the far away observer.";
+        private readonly string _bhparam1 = "Enter the time";
+        private readonly string _bhparam2 = "Enter the distance ratio (schwarchild r coordinate divided by schwarchild radius rs)";
 
         [HttpGet]
         public IActionResult BlackHoleNtoF()
