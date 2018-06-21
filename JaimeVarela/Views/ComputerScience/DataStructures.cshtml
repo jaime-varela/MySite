@@ -4,7 +4,15 @@
 <h1>Data Structures and Operational Complexities</h1>
 
 <br>
-<p>Here, we tabulate the built in data structures for various languages along with their query and update complexities.  Here (*) means average case.</p>
+<p>Here, we tabulate the built in data structures for various languages along with their query and update complexities.  Here (*) means average case and 'Access' denotes the type of iterator access the container possesses.  The iterator terminology is as follows:</p>
+
+<ul>
+    <li>R: Random access (an index)</li>
+    <li>F: Forward access</li>
+    <li>B: Backward access</li>
+    <li>F/B: Forward and backward access</li>
+    <li>N: no iterator access</li>
+</ul>
 
 @foreach(var item in Model.pocoObject)
 {

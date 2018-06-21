@@ -1,35 +1,82 @@
 [
-    {"Language":"C++", "Description":"C++ defines its containers in the Standard Template Library (STL).  To access them you need the apropriate 'include' statement or you can state 'using namespace std' (not recommended).",
+    {"Language":"C++", "Description":"C++ defines its containers in the Standard Template Library (STL).  To access them you need the apropriate 'include' statement or you can state 'using namespace std' (not recommended).  Finally, it should be noted that many of these containers allow you to provide custom comparator predicates (see www.cplusplus.com for reference).",
         "header":["Name","Access","Find","Delete","Insert","Syntax","Notes"],        
-                        "DataStructures":[{"Name":"Vector",
-                                        "Access":"O(1)",
-                                        "Find":"O(n)",
-                                        "Delete":"O(n)",
-                                        "Insert":"O(n)",
-                                        "Syntax":"vector<T>",
-                                        "Note":"Uses contigous memory-array storage: no ordering"},
-                                        {"Name":"Unordered map",
-                                        "Access":"N/A",
-                                        "Find":"O(1)*",
-                                        "Delete":"O(1)*",
-                                        "Insert":"O(1)*",
-                                        "Syntax":"unordered_map<K,T>",
-                                        "Note":"Hashmap to array: no ordering"},
-                                        {"Name":"set",
-                                        "Access":"N/A",
-                                        "Find":"O(log(n))",
-                                        "Delete":"O(log(n))",
-                                        "Insert":"O(log(n))",
-                                        "Syntax":"set<K,T> or set<K>",
-                                        "Note":"Uses Balanced trees: has ordering"},
+                        "DataStructures":[
+                                        {
+                                            "Name":"vector",
+                                            "Access":"R",
+                                            "Find":"O(n)",
+                                            "Delete":"O(n)",
+                                            "Insert":"O(n): O(1) back",
+                                            "Syntax":"vector<T>",
+                                            "Note":"dynamic array, contigous storage: no ordering"
+                                        },
+                                        {
+                                            "Name":"array",
+                                            "Access":"R",
+                                            "Find":"O(n)",
+                                            "Delete":"O(n)",
+                                            "Insert":"O(n): O(1) back",
+                                            "Syntax":"array<T,size>",
+                                            "Note":"fixed array, contigous storage: no ordering"
+                                        },
+                                        {
+                                            "Name":"map",
+                                            "Access":"F/B",
+                                            "Find":"O(log(n))*",
+                                            "Delete":"O(log(n))*",
+                                            "Insert":"O(log(n))*",
+                                            "Syntax":"map<K,T>",
+                                            "Note":"balanced trees: has key ordering"
+                                        },
+                                        {
+                                            "Name":"unordered map",
+                                            "Access":"N",
+                                            "Find":"O(1)*",
+                                            "Delete":"O(1)*",
+                                            "Insert":"O(1)*",
+                                            "Syntax":"unordered_map<K,T>",
+                                            "Note":"Hashmap to array: no ordering"
+                                        },
+                                        {
+                                            "Name":"set",
+                                            "Access":"F/B",
+                                            "Find":"O(log(n))",
+                                            "Delete":"O(log(n))",
+                                            "Insert":"O(log(n))",
+                                            "Syntax":"set<K>",
+                                            "Note":"Uses Balanced trees: has ordering"
+                                        },
                                         {
                                             "Name":"stack",
-                                            "Access":"N/A",
+                                            "Access":"B",
                                             "Find":"O(n)",
                                             "Delete":"O(1) to O(n)",
                                             "Insert":"O(1)",
                                             "Syntax":"stack<T>",
                                             "Note":"Implemented by array: LIFO"
+                                        },
+                                        {
+                                            "Name":"queue",
+                                            "Access":"F",
+                                            "Find":"O(n)",
+                                            "Delete":"O(1) to O(n)",
+                                            "Insert":"O(1)",
+                                            "Syntax":"queue<T>",
+                                            "Note":"Implemented by array: FIFO"
                                         }
-                                        ]}
+                                        ]},
+    {"Language":"C#", "Description":"C# defines its containers in System.Collections.Generic.  To access them you need to have 'using Systems.Collection.Generic' in the top of your .cs file.",
+        "header":["Name","Access","Find","Delete","Insert","Syntax","Notes"],
+        "DataStructures":[
+                                    {
+                                        "Name":"List",
+                                        "Access":"O(1)",
+                                        "Find":"O(n)",
+                                        "Delete":"O(n)",
+                                        "Insert":"O(n)",
+                                        "Syntax":"List<T>",
+                                        "Note":"Uses contigous memory-array storage: no ordering"
+                                    }
+            ]}
 ]
