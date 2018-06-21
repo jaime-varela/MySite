@@ -1,4 +1,36 @@
 @model JaimeVarela.Models.DataStructureViewModel
 
 
-<h1>Data Structure Sort and Query Complexities</h1>
+<h1>Data Structures and Operational Complexities</h1>
+
+<br>
+<p>Here, we tabulate the built in data structures for various languages along with their query and update complexities.  Here (*) means average case.</p>
+
+@foreach(var item in Model.pocoObject)
+{
+    <h2>@item.Language</h2>
+    <p>@item.Description</p>
+    <br>
+    <div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            @foreach (var header in item.header)
+            {
+                <th>
+                    @header
+                </th>
+            }
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var ds in item.DataStructures)
+        {
+            <tr>
+            <td>@ds.Name</td> <td>@ds.Access</td> <td>@ds.Find</td> <td>@ds.Delete</td> <td>@ds.Insert</td> <td style="word-wrap">@ds.Syntax</td> <td style="word-wrap">@ds.Note</td>            
+            </tr>
+        }        
+        </tbody>
+    </table>
+    </div>
+}

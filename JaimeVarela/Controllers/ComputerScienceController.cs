@@ -17,7 +17,7 @@ namespace JaimeVarela.Controllers
             string JsonString = System.IO.File.ReadAllText(path);
             var pocoObject = JsonConvert.DeserializeObject<List<DataStructureData>>(JsonString);
             var VM = new DataStructureViewModel(pocoObject);
-            return View();
+            return View(VM);
         }
     }
 }

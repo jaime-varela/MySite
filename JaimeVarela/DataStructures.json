@@ -1,6 +1,35 @@
 [
-    {"Language":"C++"},
-    {"Language":"C#"},
-    {"Language":"Java"},
-    {"Language":"Python"}
+    {"Language":"C++", "Description":"C++ defines its containers in the Standard Template Library (STL).  To access them you need the apropriate 'include' statement or you can state 'using namespace std' (not recommended).",
+        "header":["Name","Access","Find","Delete","Insert","Syntax","Notes"],        
+                        "DataStructures":[{"Name":"Vector",
+                                        "Access":"O(1)",
+                                        "Find":"O(n)",
+                                        "Delete":"O(n)",
+                                        "Insert":"O(n)",
+                                        "Syntax":"vector<T>",
+                                        "Note":"Uses contigous memory-array storage: no ordering"},
+                                        {"Name":"Unordered map",
+                                        "Access":"N/A",
+                                        "Find":"O(1)*",
+                                        "Delete":"O(1)*",
+                                        "Insert":"O(1)*",
+                                        "Syntax":"unordered_map<K,T>",
+                                        "Note":"Hashmap to array: no ordering"},
+                                        {"Name":"set",
+                                        "Access":"N/A",
+                                        "Find":"O(log(n))",
+                                        "Delete":"O(log(n))",
+                                        "Insert":"O(log(n))",
+                                        "Syntax":"set<K,T> or set<K>",
+                                        "Note":"Uses Balanced trees: has ordering"},
+                                        {
+                                            "Name":"stack",
+                                            "Access":"N/A",
+                                            "Find":"O(n)",
+                                            "Delete":"O(1) to O(n)",
+                                            "Insert":"O(1)",
+                                            "Syntax":"stack<T>",
+                                            "Note":"Implemented by array: LIFO"
+                                        }
+                                        ]}
 ]
