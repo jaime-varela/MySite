@@ -51,7 +51,7 @@
                                             "Name":"stack",
                                             "Access":"B",
                                             "Find":"O(n)",
-                                            "Delete":"O(1) to O(n)",
+                                            "Delete":"O(1): top",
                                             "Insert":"O(1)",
                                             "Syntax":"stack<T>",
                                             "Note":"Implemented by array: LIFO"
@@ -60,7 +60,7 @@
                                             "Name":"queue",
                                             "Access":"F",
                                             "Find":"O(n)",
-                                            "Delete":"O(1) to O(n)",
+                                            "Delete":"O(1): top",
                                             "Insert":"O(1)",
                                             "Syntax":"queue<T>",
                                             "Note":"Implemented by array: FIFO"
